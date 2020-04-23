@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "ts": {}
+    }
+  },
+  "rules": {
+    "max-lines-per-function": "off",
+    // two rules below will check by ts
+    "import/named": "off",
+    "import/default": "off",
+
+    // @typescript-eslint/no-unused-vars has same rules
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ]
+  }
+}
